@@ -56,15 +56,6 @@ To run this project locally, you will need the following installed on your machi
    *(This will insert all necessary sample data).*
 3. **Open `DQL.sql`**, copy all content, and run it. (Optional)
    *(This will run pre-built analysis queries).*
-
-### 4. Run the Java Application
-
-1. Open the project folder in your preferred Java IDE.
-2. Navigate to `src/main/java/com/ridevault/DatabaseConnection.java`.
-3. Update the `PASSWORD` and `USER` variables to match your local PostgreSQL credentials.
-4. Run `Main.java` to launch the interactive dashboard.
-5. Choose your portal (Rider or Driver) and test the system!
-
 ---
 
 ## 📊 Diagrams
