@@ -38,7 +38,7 @@ To run this project locally, you will need the following installed on your machi
 
 ### 1. Clone the repository
 
-    git clone https://github.com/yourusername/RideVault.git
+    git clone https://github.com/devgorasiya07/RideVault.git
     cd RideVault
 
 ### 2. Configure the Database (pgAdmin)
