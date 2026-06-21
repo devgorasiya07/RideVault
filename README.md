@@ -1,56 +1,70 @@
-# 🚕 RideVault: Enterprise Database Architecture
+# 🚕 RideVault
 
-Welcome to the **RideVault Database Repository**. This project contains the complete, scalable Relational Database Management System (RDBMS) architecture for a robust ride-sharing application (similar to Uber or Ola). 
+RideVault is a comprehensive, object-oriented, database-driven ride-sharing platform (Uber/Ola clone). It includes:
 
-Designed with data integrity, geospatial tracking, and dynamic financial calculations in mind, this database serves as the unbreakable backbone for the RideVault ecosystem.
-
----
-
-## 📊 Repository Structure
-
-This repository is strictly organized into logical SQL layers and visual documentation:
-
-* **`DDL.sql`** - **Data Definition Language:** The master blueprint. Contains all `CREATE TABLE` scripts, Primary/Foreign Key relationships, strict `NOT NULL` constraints, and sequence initializations.
-* **`DataInsertion.sql`** - **Data Manipulation Language:** Contains robust mock data for Riders, Drivers, Fare Rules, and Locations to simulate a live production environment.
-* **`DQL.sql`** - **Data Query Language:** Contains complex `SELECT`, `JOIN`, and analytical queries used by the backend to fetch ride history, calculate analytics, and filter available drivers.
-* **`ERD.jpg`** - **Entity-Relationship Diagram:** A high-level visual map showing how entities (Users, Rides, Wallets, Vehicles) interact.
-* **`RelationalDiagram.pdf`** - A comprehensive, deep-dive schematic of the database schema, detailing exact data types and cardinality.
+* Enterprise-grade PostgreSQL schema with strict constraints and sequence management
+* Java-based backend simulating a real-world CLI interactive dashboard
+* Advanced routing using the Haversine formula for precise GPS distance calculation
+* Dynamic pricing engine utilizing live database fare rules and surge multipliers
 
 ---
 
-## 🏗️ Core Architectural Features
+## 📁 Project Structure
 
-This database goes beyond basic CRUD operations by implementing real-world business logic directly at the schema level:
+```text
+RideVault/
+├── src/main/java/com/ridevault/ # Java OOP Backend (Models, DAOs, Services, CLI)
+├── DDL.sql                      # SQL schema definitions (Tables, Keys, Constraints)
+├── DataInsertion.sql            # Inserts sample data into tables
+├── DQL.sql                      # SELECT queries for analysis
+├── ERD.jpg                      # Entity-Relationship Diagram (image)
+└── RelationalDiagram.pdf        # Detailed relational model (PDF)
 
-* **Geospatial Tracking:** Utilizes strict `DECIMAL(9, 6)` coordinates (`pickup_lat`, `pickup_lng`) to ensure precise mapping and distance calculations (Haversine formula compatible).
-* **Dynamic Pricing Engine:** A dedicated `FARE_RULES` and `SURGE_PRICING` schema that allows the backend to calculate real-time pricing based on vehicle category, distance, time, and high-demand geographical zones.
-* **Transactional Wallet System:** A ledger-style `WALLET_TRANSACTIONS` table that records all credits/debits linked to specific `Ride_Ids`, ensuring zero financial leakage.
-* **Strict State Management:** The `Ride` table utilizes indexed status columns (`PENDING`, `ACCEPTED`, `COMPLETED`) protected by relational constraints, preventing "race conditions" between drivers.
-* **Session Management:** A `Driver_Session` table to track real-time driver availability and last-known GPS coordinates without overloading the core user table.
+🛠️ Requirements
+Java Development Kit (JDK 17 or higher)
 
----
+PostgreSQL or compatible SQL database
 
-## 🛠️ Tech Stack
+SQL client (pgAdmin 4 recommended)
 
-* **Database Engine:** PostgreSQL
-* **Architecture:** Normalized Relational Database (3NF)
-* **Design Tools:** pgAdmin 4, standard ERD modeling tools.
+Java IDE (VS Code, IntelliJ, or Eclipse)
 
----
+Image/PDF viewer for diagrams (optional)
 
-## 🚀 Getting Started (Local Setup)
+🚀 Setup Instructions
+1. Clone the repository
+Bash
+git clone [https://github.com/yourusername/RideVault.git](https://github.com/yourusername/RideVault.git)
+cd RideVault
+2. Open pgAdmin (Database Setup)
+Connect to your PostgreSQL server
 
-To deploy this database on your local machine for testing or backend integration:
+Create a new database named RideVault
 
-1. **Install PostgreSQL:** Ensure PostgreSQL and pgAdmin are installed on your machine.
-2. **Create the Database:** Open pgAdmin, right-click on Databases, and create a new database named `"RideVault"`.
-3. **Run the DDL:** Open the Query Tool, paste the contents of `DDL.sql`, and execute it to build the empty architecture.
-4. **Seed the Data:** Clear the Query Tool, paste the contents of `DataInsertion.sql`, and execute it to populate the tables with testing data.
-5. **Test the Logic:** Use `DQL.sql` to run sample queries and verify relational integrity.
+Open a new Query Tool tab for this database
 
----
+3. Execute SQL files in this order:
+Open DDL.sql, copy all content, and run it
+📌 This will create the enterprise database schema (tables, constraints, keys)
 
-## 💡 Developer Notes
+Open DataInsertion.sql, copy all content, and run it
+📌 This will insert sample data (Fare Rules, Surge Zones, Users) into the tables
 
-* **Primary Key Sequences:** If manually inserting test data via the pgAdmin UI, remember to leave `SERIAL` ID columns blank to prevent sequence desynchronization (`duplicate key value violates unique constraint`).
-* **Cascading Deletes:** Deleting a `Driver` or `Rider` will safely cascade down to their respective vehicles, wallets, and sessions to prevent orphaned data.
+Open DQL.sql, copy all content, and run it (Optional)
+📌 This will run the analysis queries and show analytical insights
+
+4. Run the Java Application
+Open the project in your preferred Java IDE.
+
+Navigate to src/main/java/com/ridevault/DatabaseConnection.java.
+
+Update the PASSWORD variable with your local PostgreSQL password.
+
+Run Main.java to launch the interactive Rider and Driver dashboards!
+
+📊 Diagrams
+ERD.jpg – Entity-Relationship Diagram showing high-level architecture
+
+RelationalDiagram.pdf – Full relational schema with foreign keys and strict data types
+
+Open with any image or PDF viewer.
