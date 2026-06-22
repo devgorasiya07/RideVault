@@ -4,7 +4,6 @@ RideVault is a comprehensive, object-oriented, database-driven ride-sharing plat
 
 ### ✨ Key Features:
 * **Enterprise PostgreSQL Schema:** 13+ tables with strict constraints, cascading deletes, and sequence management.
-* **Interactive CLI Dashboard:** Java-based backend simulating a real-world application for both Riders and Drivers.
 * **Geospatial Routing:** Utilizes the real-world **Haversine formula** for precise GPS distance calculation between city coordinates.
 * **Dynamic Pricing Engine:** Calculates fares using live database rules, minimum fare checks, and geographical surge multipliers.
 
@@ -13,7 +12,6 @@ RideVault is a comprehensive, object-oriented, database-driven ride-sharing plat
 ## 📁 Project Structure
 
     RideVault/
-    ├── src/main/java/com/ridevault/ # Java OOP Backend (Models, DAOs, Services, CLI)
     ├── DDL.sql                      # SQL schema definitions (Tables, Keys, Constraints)
     ├── DataInsertion.sql            # Inserts sample data into tables
     ├── DQL.sql                      # SELECT queries for analysis
@@ -26,11 +24,8 @@ RideVault is a comprehensive, object-oriented, database-driven ride-sharing plat
 
 To run this project locally, you will need the following installed on your machine:
 
-* **Java Development Kit (JDK):** Version 17 or higher
 * **Database Engine:** PostgreSQL or a compatible SQL database
 * **SQL Client:** pgAdmin 4 (Highly Recommended)
-* **IDE:** VS Code, IntelliJ IDEA, or Eclipse
-* **Viewer:** Any standard Image/PDF viewer to open the database diagrams
 
 ---
 
