@@ -24,7 +24,7 @@ RideVault is a comprehensive, object-oriented, database-driven ride-sharing plat
 
 To run this project locally, you will need the following installed on your machine:
 
-* **Database Engine:** PostgreSQL or a compatible SQL database
+* **Database Engine:** PostgreSQL 
 * **SQL Client:** pgAdmin 4 (Highly Recommended)
 
 ---
