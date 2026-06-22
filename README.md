@@ -71,6 +71,6 @@ To truly understand the relational flow of data, refer to the included diagrams:
 
 Once you have the project running, you can scale it further:
 
-* **Expand Locations:** Open `Location.java` and add more real-world GPS coordinates to expand the serviceable area.
+* **PL/pgSQL Triggers:** Write automated triggers (e.g., automatically insert a row into `WALLET_TRANSACTIONS` the moment a `Ride` status is updated to 'COMPLETED').
 * **Database Migration:** Adjust SQL data types in the DDL if you wish to migrate the architecture to MySQL.
 * **Extend Analytics:** Modify `DQL.sql` to include complex analytical queries.
